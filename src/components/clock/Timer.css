@@ -1,0 +1,19 @@
+.pomodoro-clock-section{
+    display: inline-block;
+    width: 50%;
+    box-sizing: border-box;
+}
+
+.timer-work-session{
+    border: solid black;
+    background-color: tomato;
+    text-align:center;
+    min-height: 400px;
+}
+
+.timer-break-session{
+    border: solid black;
+    background-color: violet;
+    text-align:center;
+    min-height: 400px;
+}

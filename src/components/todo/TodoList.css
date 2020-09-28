@@ -1,0 +1,9 @@
+.todolist{
+  display: inline-block;
+  width: 50%;
+  border: solid black;
+  box-sizing: border-box;
+  text-align: center;
+  height: 400px;
+  vertical-align: top;
+}
