@@ -1,0 +1,31 @@
+main{
+    justify-content: center;
+    background-image: url("./pexels-pixabay-355770.jpg");
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.btn:focus {
+    outline: none !important;
+    outline-offset: none !important;
+}
+
+.search-community-input{
+  border: 1px solid #000000;
+  background: none;
+  height: 35px;
+  border-radius: 5px;
+  margin-right: 10px;
+  padding-left: 10px;
+  padding-top: 1px;
+  margin-left: 640px;
+}
+
+.search-community-input::placeholder{
+    color: black;
+    font-weight: 350;
+    font-size: 0.9rem;
+}
+

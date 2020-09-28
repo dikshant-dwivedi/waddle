@@ -1,19 +1,96 @@
 .pomodoro-clock-section{
+    width: 35%;
+    border-radius: 5px;
+    border: solid #000;
+    min-height: 400px;
+    padding-bottom: 10px;
+    padding-top: 10px;
     display: inline-block;
-    width: 50%;
-    box-sizing: border-box;
+    margin-left: 10%;
 }
 
 .timer-work-session{
-    border: solid black;
-    background-color: tomato;
     text-align:center;
-    min-height: 400px;
 }
 
 .timer-break-session{
-    border: solid black;
-    background-color: violet;
     text-align:center;
-    min-height: 400px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 70%;
+  display: block;
+  height: 24px;
+  border-radius: 18px;  
+  background: #000;
+  outline: none;
+  margin: 0 auto;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%; 
+  background: #fff;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: #000000;
+  cursor: pointer;
+}
+
+.timer{
+    font-size: 8.5rem;
+}
+
+.controlButtons {
+    display: inline-block;
+    border: none;
+    padding: 0.7rem 2rem;
+    margin: 40px 0 0 0;
+    text-decoration: none;
+    background: #000;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.1rem;
+    cursor: pointer;
+    text-align: center;
+    transition: background 250ms ease-in-out, 
+                transform 150ms ease;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.controlButtons:hover,
+.controlButtons:focus {
+    background: #000;
+}
+
+.controlButtons:focus {
+    outline: 1px solid #fff;
+    outline-offset: -4px;
+}
+
+.controlButtons:active {
+    transform: scale(0.99);
+}
+
+.headings{
+    display: inline-block;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.headings-container{
+    display: inline-block;
+    margin-left: -50px;
 }
