@@ -1,6 +1,9 @@
 const mongoose = require("mongoose")
 
-const TodoSchema = new mongoose.Schema({ title: String, isCompleted: Boolean });
+const TodoSchema = new mongoose.Schema({
+     title: String,
+     isCompleted: Boolean });
+     
 const userSchema = new mongoose.Schema({
     email: {type: String, required: true, unique: true},
     password: {type: String, minlength: 5},

@@ -8,7 +8,8 @@ import Snackbar from '@material-ui/core/Snackbar';
 import EditIcon from '@material-ui/icons/Edit';
 import IconButton from '@material-ui/core/IconButton'
 import CloseIcon from '@material-ui/icons/Close';
-import './TodoList.css'
+import './TodoList.css';
+import Button from 'react-bootstrap/Button';
 export function TodoList() {
 
     const { userData } = useContext(UserContext)
@@ -35,7 +36,7 @@ export function TodoList() {
 
     function handleClose(event, reason) {
         if (reason === 'clickaway') {
-            return;
+            setOpen(false)
         }
         setOpen(false)
     };
@@ -104,7 +105,7 @@ export function TodoList() {
     const deleteTodo = async (id) => {
         if (userData.user === undefined) {
             setTodo([...todos.filter(todo => todo.id !== id)])
-            setOpen(true)
+            //setOpen(true)
         }
         else {
             const reqObj = {
@@ -113,7 +114,7 @@ export function TodoList() {
             }
             await axios.post("http://localhost:5000/todos/delete", reqObj)
             setTodo([...todos.filter(todo => todo.id !== id)])
-            setOpen(true)
+            //setOpen(true)
         }
     }
 
@@ -160,8 +161,8 @@ export function TodoList() {
                 title={title}
                 onChangeTodo={onChangeTodo}
                 onAddItem={onAddItem} />
-            <section className="todos">
-                <Todos todos={todos}
+            {(todos.length !== 0) ?<section className="todos">
+                 <Todos todos={todos}
                     markComplete={markComplete}
                     deleteTodo={deleteTodo}
                     editTodo={editTodo}
@@ -183,7 +184,11 @@ export function TodoList() {
                         </React.Fragment>
                     }
                 />
-            </section>
+            </section> : 
+                <h1 style={{ color: "#000",
+                 marginTop: "150px",
+                 fontFamily: "sans-serif", 
+                 }}>Add tasks<span role="img" aria-label="sheep">{' '}✏️</span></h1>}
         </div>
     )
 }
@@ -198,19 +203,35 @@ function AddTodo(props) {
 
     function onAddItem(e) {
         e.preventDefault()
+        if(props.title.trim === '')
+        {
+            return null
+        }
+        else
+        {
         props.onAddItem()
+        }
     }
 
+
     return (
-        <form onSubmit={onAddItem} className="add-todo-form">
+        <form onSubmit={(e) => {((props.title.trim()) !== '') ? onAddItem(e) : e.preventDefault()}} className="add-todo-form">
             <input type="text"
                 className="add-todo-input"
+                placeholder="Type your tasks here"
                 onChange={onChangeTodo}
-                value={props.title} />
-            <input type="submit"
-                className="add-todo-submit"
-                value="Add"
-                disabled={(props.title.trim() === '') ? true : false} />
+                value={props.title}/>
+            <Button variant="dark"
+                className='btn btn-outline-dark shadow-none'
+                style={{
+                    color: "white",
+                    fontSize: "1rem",
+                    padding: "5px",
+                    background: "black",
+                    fontFamily: "sans-serif",
+                }}
+                disabled={(props.title.trim() === '') ? true : false}
+                onClick = {onAddItem}>Add</Button>
         </form>
     )
 }
@@ -272,13 +293,13 @@ class TodoItem extends React.Component {
                             textDecoration: isCompleted ? 'line-through' : 'none',
                             display: editDisabled ? 'block' : 'edit'
                         }} >
-                        <div class="checkbox-container">
-                            <label class="checkbox-label">
+                        <div className="checkbox-container">
+                            <label className="checkbox-label">
                                 <input type="checkbox"
                                     className="checkbox"
                                     defaultChecked={isCompleted}
                                     onChange={this.props.markComplete.bind(this, id)} />
-                                <span class="checkbox-custom rectangular"></span>
+                                <span className="checkbox-custom rectangular"></span>
                             </label>
                         </div>
                         {title}

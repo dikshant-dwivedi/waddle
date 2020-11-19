@@ -1,15 +1,4 @@
 
-.todolist{
-  padding: 10px;
-  border: 2px solid black;
-  text-align: center;
-  height: 400px;
-  display: inline-block;
-  width: 45%;
-  border-radius: 5px;
-  vertical-align: top;
-}
-
 h4{
   padding-bottom: 10px;
 }
@@ -22,13 +11,18 @@ h4{
   flex: 10;
   border: 1px solid #000000;
   background: none;
-}
-.add-todo-input:focus{
-  flex: 10;
-  border: 1px solid #000000;
-  background: rgba(255, 255, 255, 0.438);
+  height: 35px;
+  border-radius: 5px;
+  margin-right: 10px;
+  padding-left: 10px;
+  padding-top: 1px;
 }
 
+.add-todo-input::placeholder{
+    color: black;
+    font-weight: 350;
+    font-size: 0.9rem;
+}
 
 .add-todo-submit{
   flex: 1;
@@ -179,7 +173,7 @@ h4{
 
 
 .todos{
-  height: 290px;
+  height: 340px;
   overflow: auto;
 }
 

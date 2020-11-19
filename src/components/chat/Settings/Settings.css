@@ -1,0 +1,99 @@
+.users-container{
+    max-height: 300px;
+    margin-top: 10px;
+    overflow: auto;
+}
+
+.individual-user{
+    padding: 10px;
+    background: linear-gradient(to right, #f3ccd4cb, #fff785cb); 
+    margin-right: auto; 
+    margin-left: auto; 
+    border-bottom: black solid 1px;
+    position: relative;
+}
+
+#username-span{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#admin-span{
+    font-size: 0.8em;
+    color: green;
+    border: 1px solid green;
+    padding: 2px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+#room-info{
+    padding: 10px;
+    /*background: linear-gradient(to right, #f3ccd4cb, #fff785cb); */
+    background: rgba(255, 255, 255, 0.568);
+    margin-right: 10px;
+    border-radius: 5px; 
+    margin-left: 10px;
+    position: relative;
+    top: 40px;
+    text-align: left;
+    font-size: large;
+    font-weight: 400;
+    font-family:  Geneva, Verdana, sans-serif;
+}
+
+#users-list-container{
+    margin: 10px;
+    margin-top: 0px;
+    background: rgba(255, 255, 255, 0.568);
+    border-radius: 5px; 
+    text-align: left;
+    padding-bottom: 10px;
+}
+
+#users-heading{
+    font-weight: 400;
+    font-family:  Geneva, Verdana, sans-serif;
+    margin-left: 10px;
+    padding-top: 5px;
+}
+
+#settings-container{
+    height: 300px;
+    margin-top: 50px;
+    overflow: auto;
+    margin-right: 10px;
+}
+
+#notice-div{
+    margin:10px;
+    background: rgba(255, 255, 255, 0.568);
+    border-radius: 5px; 
+    text-align: left;
+    padding: 10px;
+}
+
+#notice-heading{
+    font-weight: 400;
+    font-family:  Geneva, Verdana, sans-serif;
+    margin-left: 10px;
+}
+
+#comment{
+    width: 100%;
+    min-height: 3rem;
+    resize: vertical;
+    transition: ease .2s;
+    background: transparent;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+#comment:focus{
+    min-height: 5rem;
+}
+
+#comment::placeholder {
+    color: black;
+    font-weight: 350;
+    font-size: 0.9rem;
+}

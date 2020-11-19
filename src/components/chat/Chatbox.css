@@ -1,25 +1,27 @@
-.chat-box{
-  padding: 10px;
-  border: 2px solid black;
-  text-align: center;
-  height: 400px;
-  display: inline-block;
-  width: 45%;
-  border-radius: 5px;
-  vertical-align: top;
-}
+
 #message-form{
   display: flex;
+  position: relative;
+  top:10px;
+  bottom: 10px;
 }
 #message-input{
   flex: 10;
   border: 1px solid #000000;
   background: none;
-}
-#message-input:focus{
-  flex: 10;
-  border: 1px solid #000000;
+  height: 35px;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-left: 10px;
+  padding-left: 10px;
+  padding-top: 1px;
   background: rgba(255, 255, 255, 0.438);
+}
+
+#message-input::placeholder{
+    color: black;
+    font-weight: 350;
+    font-size: 0.9rem;
 }
 
 #message-send{
@@ -52,4 +54,30 @@
     background-position: left top;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #000; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+#top-bar{
+  width:100%;
+  height: 30px;
+  position: absolute;
 }
